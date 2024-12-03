@@ -1,8 +1,17 @@
-body {
+body{
+    opacity: 1;
     background-image: url('../img/background.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    margin: 0;
+    height: 100vh;
     background-color: black;
+    color: white;
 }
 
+.makecenter {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
