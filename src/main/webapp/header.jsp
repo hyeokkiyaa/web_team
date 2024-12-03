@@ -20,17 +20,14 @@
 
   <div class="navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"><img src="img/house.svg" alt="house"></a>
+      <li class="nav-item">
+        <a class="nav-link" href="world.jsp"><img src="img/world.svg" alt="world"></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><img src="img/world.svg" alt="world"></a>
+        <a class="nav-link" href="mylist.jsp"><img src="img/written.svg" alt="mypage"></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><img src="img/written.svg" alt="mypage"></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"><img src="img/profile.svg" alt="profile"></a>
+        <a class="nav-link" href="profile.jsp"><img src="img/profile.svg" alt="profile"></a>
       </li>
     </ul>
   </div>

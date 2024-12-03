@@ -1,0 +1,43 @@
+body {
+    font-size: 140%;
+}
+
+h2 {
+    text-align: center;
+    padding: 20px 0;
+    font-weight: bold;
+    font-family: "Bauhaus 93";
+    color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* 테이블 셀의 경계를 하나로 합침 */
+    background-color: rgba(255, 255, 255, 0.8); /* 흰색 배경에 0.8 투명도 적용 */
+    border-radius: 10px; /* 둥근 모서리 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과로 테이블을 강조 */
+}
+
+table caption {
+    padding: .5em 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd; /* 연한 회색으로 테두리 */
+}
+
+th, td {
+    padding: 8px; /* 셀 안의 내용과 테두리 사이에 여백 추가 */
+    text-align: center;
+}
+
+th {
+    background-color: #f4f4f4; /* 헤더 셀 배경색 */
+    font-weight: bold; /* 헤더 텍스트 강조 */
+}
+
+.p {
+    text-align: center;
+    padding-top: 140px;
+    font-size: 14px;
+}
