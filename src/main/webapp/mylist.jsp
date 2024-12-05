@@ -16,7 +16,14 @@
 <jsp:include page="header.jsp" />
 <body>
 <h2>My Recipe</h2>
-
+<div class="d-flex">
+    <a class="btn btn-outline-success" href="add">
+        <img src="img/plus-lg.svg" alt="plus sign"/>
+    </a>
+    <input class="form-control me-2 ms-2" type="search" placeholder="Search" name="namesearch" id="namesearch">
+    <button class="btn btn-outline-success" onclick="searchByName()">Search</button>
+</div>
+<br>
 <div class="container">
     <div class="row">
         <div class="col-xs-12">

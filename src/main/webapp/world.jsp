@@ -26,13 +26,7 @@
         </button>
       </form>
 
-      <div class="d-flex">
-        <a class="btn btn-outline-success" href="add">
-          <img src="img/plus-lg.svg" alt="plus sign"/>
-        </a>
-        <input class="form-control me-2 ms-2" type="search" placeholder="Search" name="namesearch" id="namesearch">
-        <button class="btn btn-outline-success" onclick="searchByName()">Search</button>
-      </div>
+
     </div>
   </nav>
   <div class="container">
