@@ -28,7 +28,7 @@
       <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="button" onclick="golist()">Sign in</button>
+    <button class="w-100 btn btn-lg btn-secondary" type="button" onclick="golist()">Sign in</button>
     <p class="mt-5 mb-3 text-muted">&copy; 맛공방</p>
   </form>
 </main>
