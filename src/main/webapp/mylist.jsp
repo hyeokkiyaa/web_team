@@ -34,7 +34,6 @@
                 <img src="img/sort-alpha-down.svg" alt="sort alphabet"/>
             </button>
 
-
             <a class="btn btn-secondary" href="add">
                 <img src="img/plus-lg.svg" alt="plus sign"/>
             </a>
@@ -53,10 +52,12 @@
                 <tr>
                     <th>ID</th>
                     <th>Recipe Name</th>
-                    <th>Ingredients</th>
+                    <th>Main Ingredient</th>
                     <th>Prep Time (min)</th>
                     <th>Difficulty Level</th>
                     <th>Category</th>
+                    <th>Views</th>
+                    <th>Reg Date</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -67,6 +68,8 @@
                     <td>30</td>
                     <td>3</td>
                     <td>Italian</td>
+                    <td>120</td>
+                    <td>2024-12-03</td>
                 </tr>
                 <tr>
                     <td>2</td>
@@ -75,6 +78,8 @@
                     <td>20</td>
                     <td>2</td>
                     <td>Salad</td>
+                    <td>98</td>
+                    <td>2024-12-02</td>
                 </tr>
                 <tr>
                     <td>3</td>
@@ -83,6 +88,8 @@
                     <td>15</td>
                     <td>1</td>
                     <td>Breakfast</td>
+                    <td>150</td>
+                    <td>2024-12-01</td>
                 </tr>
                 </tbody>
 
