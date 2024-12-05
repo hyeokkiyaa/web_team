@@ -1,3 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/fnlImD_T)
 
-현재 프로필제외 구현 완료,,
+2024/12/06
+현재 layout 배치 완료
+back 부분 개발 시작할 필요있음
