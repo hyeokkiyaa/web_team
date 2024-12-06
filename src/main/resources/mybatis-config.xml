@@ -4,12 +4,12 @@
         "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <typeAlias type="org.example.team.UserVO" alias="user" />
+        <typeAlias type="org.example.team.vo.UserVO" alias="user" />
     </typeAliases>
     <typeAliases>
-        <typeAlias type="org.example.team.WorldListVO" alias="worldlist" />
+        <typeAlias type="org.example.team.vo.WorldListVO" alias="worldlist" />
     </typeAliases>
     <typeAliases>
-        <typeAlias type="org.example.team.MyListVO" alias="mylist" />
+        <typeAlias type="org.example.team.vo.MyListVO" alias="mylist" />
     </typeAliases>
 </configuration>
