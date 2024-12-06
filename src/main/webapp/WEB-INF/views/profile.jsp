@@ -5,17 +5,30 @@
   Time: 오후 7:35
   To change this template use File | Settings | File Templates.
 --%>
-<link rel="stylesheet" type="text/css" href="../../css/background.css">
-<link rel="stylesheet" type="text/css" href="../../css/world.css">
+<link rel="stylesheet" type="text/css" href="css/background.css">
+<link rel="stylesheet" type="text/css" href="css/world.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<style>
+    .textColor{
+        color: white;
+    }
+</style>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Profile</title>
 </head>
 <jsp:include page="header.jsp" />
-<body>
-<h2>My Profile</h2>
+<body style="opacity: 1;
+    background-image: url('img/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    height: 100vh;
+    background-color: black;
+    color: black;">
+<h2 class="textColor">My Profile</h2>
 <section>
     <div class="container py-5">
         <div class="row">
@@ -110,7 +123,7 @@
                     <div class="col-md-6">
                         <div class="card mb-4 mb-md-0">
                             <div class="card-body">
-                                <img src="../../img/foodmain.jpeg"
+                                <img src="img/foodmain.jpeg"
                                      alt="Representative"
                                      class="img-fluid rounded w-100"
                                      style="height: 200px; object-fit: cover;">
@@ -120,7 +133,7 @@
                     <div class="col-md-6">
                         <div class="card mb-4 mb-md-0">
                             <div class="card-body">
-                                <img src="../../img/foodmain2.jpg"
+                                <img src="img/foodmain2.jpg"
                                      alt="Representative"
                                      class="img-fluid rounded w-100"
                                      style="height: 200px; object-fit: cover;">

@@ -7,6 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<style>
+    .textColor{
+        color: white;
+    }
+</style>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -14,9 +19,19 @@
     <title><c:out value="${pageTitle}"/></title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/background.css">
+    <link rel="stylesheet" type="text/css" href="css/world.css">
 </head>
-<body>
-<h1 class="text-center">새 글 작성</h1>
+<body style="opacity: 1;
+    background-image: url('img/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    height: 100vh;
+    background-color: black;
+    color: black;">
+<h1 class="text-center" class="textColor">EDIT page</h1>
 <form action="addok" method="post" class="needs-validation">
     <div class="mb-3">
         <label for="title" class="form-label">제목</label>

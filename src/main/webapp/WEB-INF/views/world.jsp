@@ -5,8 +5,8 @@
   Time: 오후 7:34
   To change this template use File | Settings | File Templates.
 --%>
-<link rel="stylesheet" type="text/css" href="../../css/background.css">
-<link rel="stylesheet" type="text/css" href="../../css/world.css">
+<link rel="stylesheet" type="text/css" href="css/background.css">
+<link rel="stylesheet" type="text/css" href="css/world.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <style>
   .custom-container {
@@ -14,6 +14,10 @@
     margin-left: auto;
     margin-right: 10%;
   }
+
+   .textColor{
+     color: white;
+   }
 </style>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -21,15 +25,23 @@
   <title>World list</title>
 </head>
 <jsp:include page="header.jsp" />
-<body>
-<h2>World Recipe</h2>
+<body style="opacity: 1;
+    background-image: url('img/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    height: 100vh;
+    background-color: black;
+    color: black;">
+<h2 class="textColor">World Recipe</h2>
 <nav class="navbar navbar-expand-lg custom-table">
   <div class="container-fluid">
 
     <div class="d-flex custom-container">
       <input type="hidden" name="sort" value="">
       <button class="btn btn-secondary custom-container" type="button" onclick="sortByName()">
-        <img src="../../img/sort-alpha-down.svg" alt="sort alphabet" />
+        <img src="img/sort-alpha-down.svg" alt="sort alphabet" />
       </button>
 
       <input class="form-control me-2 ms-2" type="search" placeholder="Search" name="namesearch" id="namesearch">
