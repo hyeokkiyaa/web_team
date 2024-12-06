@@ -3,9 +3,9 @@
 <html>
 <head>
   <title>Login</title>
-  <link rel="stylesheet" type="text/css" href="css/background-login.css">
+  <link rel="stylesheet" type="text/css" href="../../css/background-login.css">
 
-  <link rel="stylesheet" type="text/css" href="css/login.css">
+  <link rel="stylesheet" type="text/css" href="../../css/login.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <script>
   function golist() {
@@ -16,7 +16,7 @@
 <body class="makecenter">
 <main class="form-signin w-100 m-auto">
   <form >
-    <img class="mb-4" src="img/logo-black.svg" alt="Logo" width="72" height="57">
+    <img class="mb-4" src="../../img/logo-black.svg" alt="Logo" width="72" height="57">
     <h1 class="logo-title">맛공방</h1>
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
