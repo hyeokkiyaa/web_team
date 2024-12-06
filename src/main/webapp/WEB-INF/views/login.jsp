@@ -3,20 +3,29 @@
 <html>
 <head>
   <title>Login</title>
-  <link rel="stylesheet" type="text/css" href="../../css/background-login.css">
-
-  <link rel="stylesheet" type="text/css" href="../../css/login.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<script>
-  function golist() {
-    location.href = "world.jsp";
-  }
-</script>
+  <!-- Spring MVC Resource Mapping을 활용한 CSS 경로 -->
+    <link rel="stylesheet" type="text/css" href="css/background-login.css">
+  <link rel="stylesheet" type="text/css" href="css/login.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script>
+    function golist() {
+      location.href = "world.jsp";
+    }
+  </script>
 </head>
-<body class="makecenter">
+<body class="makecenter" style="opacity: 1;
+    background-image: url('img/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    height: 100vh;
+    background-color: black;
+    color: black;">
 <main class="form-signin w-100 m-auto">
-  <form >
-    <img class="mb-4" src="../../img/logo-black.svg" alt="Logo" width="72" height="57">
+  <form>
+    <img class="mb-4" src="img/logo-black.svg" alt="Logo" width="72" height="57">
     <h1 class="logo-title">맛공방</h1>
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
@@ -32,6 +41,5 @@
     <p class="mt-5 mb-3 text-muted">&copy; 맛공방</p>
   </form>
 </main>
-
 </body>
 </html>
