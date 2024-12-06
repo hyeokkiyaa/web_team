@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type="org.example.team.UserVO" alias="user" />
+    </typeAliases>
+    <typeAliases>
+        <typeAlias type="org.example.team.WorldListVO" alias="worldlist" />
+    </typeAliases>
+    <typeAliases>
+        <typeAlias type="org.example.team.MyListVO" alias="mylist" />
+    </typeAliases>
+</configuration>
