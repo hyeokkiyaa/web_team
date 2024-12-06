@@ -5,11 +5,7 @@
 <configuration>
     <typeAliases>
         <typeAlias type="org.example.team.vo.UserVO" alias="user" />
-    </typeAliases>
-    <typeAliases>
         <typeAlias type="org.example.team.vo.WorldListVO" alias="worldlist" />
-    </typeAliases>
-    <typeAliases>
         <typeAlias type="org.example.team.vo.MyListVO" alias="mylist" />
     </typeAliases>
 </configuration>
