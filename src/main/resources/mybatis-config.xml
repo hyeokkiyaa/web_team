@@ -9,3 +9,4 @@
         <typeAlias type="org.example.team.vo.MyListVO" alias="mylist" />
     </typeAliases>
 </configuration>
+
