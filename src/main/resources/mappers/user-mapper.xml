@@ -3,5 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="User">
-
+    <select id="getUser" resultType="org.example.team.vo.UserVO" >
+        select userid, username from user
+        where userid=#{userid} and password=#{password}
+    </select>
 </mapper>

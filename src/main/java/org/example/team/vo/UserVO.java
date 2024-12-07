@@ -87,4 +87,6 @@ public class UserVO {
     public void setFacebook(String facebook) {
         this.facebook = facebook;
     }
+
+
 }
