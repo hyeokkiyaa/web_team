@@ -3,5 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Worldlist">
-
+    <select id="getRecipeList" resultType="worldlist">
+        select * from worldlist order by id desc
+    </select>
 </mapper>
