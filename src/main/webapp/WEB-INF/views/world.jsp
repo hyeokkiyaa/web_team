@@ -19,7 +19,8 @@
      color: white;
    }
 </style>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
   <title>World list</title>
@@ -68,63 +69,23 @@
           <th>Reg Date</th>
         </tr>
         </thead>
-        <tbody>
-        <tr>
-          <td>1</td>
-          <td>Spaghetti Bolognese</td>
-          <td>Ground beef</td>
-          <td>30</td>
-          <td>3</td>
-          <td>Italian</td>
-          <td>hykwon</td>
-          <td>120</td>
-          <td>2024-12-03</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Chicken Curry</td>
-          <td>Chicken</td>
-          <td>40</td>
-          <td>4</td>
-          <td>Indian</td>
-          <td>minju</td>
-          <td>98</td>
-          <td>2024-12-02</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Vegetable Stir-fry</td>
-          <td>Bell peppers</td>
-          <td>20</td>
-          <td>2</td>
-          <td>Asian</td>
-          <td>jiyoung</td>
-          <td>150</td>
-          <td>2024-12-01</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Cheese Pizza</td>
-          <td>Pizza dough</td>
-          <td>25</td>
-          <td>2</td>
-          <td>Italian</td>
-          <td>seojin</td>
-          <td>220</td>
-          <td>2024-11-30</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>Beef Tacos</td>
-          <td>Ground beef</td>
-          <td>15</td>
-          <td>2</td>
-          <td>Mexican</td>
-          <td>hyunjoo</td>
-          <td>180</td>
-          <td>2024-11-29</td>
-        </tr>
-        </tbody>
+        <c:forEach var="item" items="${list}">
+          <tr>
+            <td>${item.id}</td>
+            <td>${item.recipe_name}</td>
+            <td>${item.main_ingredient}</td>
+            <td>${item.prep_time}</td>
+            <td>${item.difficulty_level}</td>
+            <td>${item.category}</td>
+            <td>${item.userid}</td>
+            <td>${item.cnt}</td>
+            <td>${item.regdate}</td>
+<%--            <td>--%>
+<%--              <a href="edit/${item.seq}" class="btn btn-sm btn-warning">글수정</a>--%>
+<%--              <a href="javascript:delete_ok('${item.seq}')" class="btn btn-sm btn-danger">글삭제</a>--%>
+<%--            </td>--%>
+          </tr>
+        </c:forEach>
       </table>
     </div>
   </div>
