@@ -12,6 +12,9 @@ public class RecipeController {
     @Autowired
     RecipeWorldService recipeWorldService;
 
+    @RequestMapping("/")
+    public String home() {return "index";}
+
     @RequestMapping(value = "/add")
     public String add() {
         return "add";
