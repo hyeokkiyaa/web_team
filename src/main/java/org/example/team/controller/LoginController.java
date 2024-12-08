@@ -29,7 +29,7 @@ public class LoginController {
         String returnURL = "";
         System.out.println("입력된 UserVO: " + vo.getUserid() + ", " + vo.getUsername());
         String hex = Sha2.shaAndHex(vo.getPassword()).substring(0,25);
-
+        vo.setPassword(hex);
 
         Object existingLogin = session.getAttribute("login");
         System.out.println("기존 세션 값: " + existingLogin);
@@ -38,13 +38,11 @@ public class LoginController {
             session.removeAttribute("login");
             System.out.println("기존 세션 제거 완료.");
         }
-        int successLog = 0;
-        UserVO loginvo = service.getUser(vo);
-        if (loginvo.getPassword().equals(hex)) {
-            successLog = 1;
-        }
 
-        if (successLog == 1) {
+        UserVO loginvo = service.getUser(vo);
+
+
+        if (loginvo != null) {
             session.setAttribute("login", loginvo);
             System.out.println("로그인 성공");
             System.out.println("세션에 저장된 로그인 정보: " + session.getAttribute("login"));
