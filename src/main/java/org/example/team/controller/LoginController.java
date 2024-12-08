@@ -1,5 +1,6 @@
 package org.example.team.controller;
 
+import org.example.team.util.Sha2;
 import org.example.team.util.UserServiceImpl;
 import org.example.team.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 
 @Controller
 @RequestMapping(value = "/login")
@@ -22,9 +25,11 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/loginOk", method = RequestMethod.POST)
-    public String loginCheck(HttpSession session, UserVO vo) {
+    public String loginCheck(HttpSession session, UserVO vo) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         String returnURL = "";
         System.out.println("입력된 UserVO: " + vo.getUserid() + ", " + vo.getUsername());
+        String hex = Sha2.shaAndHex(vo.getPassword()).substring(0,25);
+
 
         Object existingLogin = session.getAttribute("login");
         System.out.println("기존 세션 값: " + existingLogin);
@@ -33,10 +38,13 @@ public class LoginController {
             session.removeAttribute("login");
             System.out.println("기존 세션 제거 완료.");
         }
+        int successLog = 0;
         UserVO loginvo = service.getUser(vo);
-        System.out.println("DB에서 가져온 UserVO: " + loginvo);
+        if (loginvo.getPassword().equals(hex)) {
+            successLog = 1;
+        }
 
-        if (loginvo != null) {
+        if (successLog == 1) {
             session.setAttribute("login", loginvo);
             System.out.println("로그인 성공");
             System.out.println("세션에 저장된 로그인 정보: " + session.getAttribute("login"));
