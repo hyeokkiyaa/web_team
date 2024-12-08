@@ -5,6 +5,7 @@ import org.example.team.util.UserServiceImpl;
 import org.example.team.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -25,18 +26,16 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/loginOk", method = RequestMethod.POST)
-    public String loginCheck(HttpSession session, UserVO vo) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+    public String loginCheck(HttpSession session, UserVO vo, Model model) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         String returnURL = "";
-        System.out.println("입력된 UserVO: " + vo.getUserid() + ", " + vo.getUsername());
         String hex = Sha2.shaAndHex(vo.getPassword()).substring(0,25);
         vo.setPassword(hex);
 
         Object existingLogin = session.getAttribute("login");
-        System.out.println("기존 세션 값: " + existingLogin);
+
 
         if (existingLogin != null) {
             session.removeAttribute("login");
-            System.out.println("기존 세션 제거 완료.");
         }
 
         UserVO loginvo = service.getUser(vo);
@@ -44,12 +43,11 @@ public class LoginController {
 
         if (loginvo != null) {
             session.setAttribute("login", loginvo);
-            System.out.println("로그인 성공");
-            System.out.println("세션에 저장된 로그인 정보: " + session.getAttribute("login"));
             returnURL = "redirect:/world";
         } else {
-            System.out.println("로그인 실패");
-            returnURL = "redirect:/login/login";
+            model.addAttribute("msg", "로그인에 실패했습니다. 다시 시도해주세요.");
+            model.addAttribute("url", "/login/login");
+            returnURL = "alert";
         }
         return returnURL;
     }
