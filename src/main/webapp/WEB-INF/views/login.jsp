@@ -9,6 +9,15 @@
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/login.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<style>
+  .form-signin {
+    max-width: 330px;
+    padding: 15px;
+    background-color: white;
+    opacity: 0.9;
+    border-radius: 10px;
+  }
+</style>
 </head>
 <body class="makecenter" style="
         display: flex;
