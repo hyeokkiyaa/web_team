@@ -5,7 +5,7 @@
   Time: 오후 7:46
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <link rel="stylesheet" type="text/css" href="css/background.css">
 <link rel="stylesheet" type="text/css" href="css/world.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -21,6 +21,7 @@
          color: white;
      }
 </style>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>My List</title>
@@ -35,7 +36,9 @@
     height: 100vh;
     background-color: black;
     color: black;">
-<h2 class="textColor">My Recipe</h2>
+<c:if test="${not empty sessionScope.login}">
+
+<h2 class="textColor">${sessionScope.login.username}'s Recipe</h2>
 <nav class="navbar navbar-expand-lg custom-table">
     <div class="container-fluid">
 
@@ -109,5 +112,6 @@
         </div>
     </div>
 </div>
+</c:if>
 </body>
 </html>
