@@ -2,8 +2,10 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mylist">
+<mapper namespace="Mylist">
     <select id="getRecipeList" resultType="worldlist">
-        select * from worldlist order by id desc
+        SELECT * FROM worldlist
+        WHERE userid = #{userid}
+        ORDER BY id DESC;
     </select>
 </mapper>

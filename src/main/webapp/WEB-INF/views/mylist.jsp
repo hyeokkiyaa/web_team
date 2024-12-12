@@ -5,7 +5,7 @@
   Time: 오후 7:46
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false" %>
 <link rel="stylesheet" type="text/css" href="css/background.css">
 <link rel="stylesheet" type="text/css" href="css/world.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -17,9 +17,9 @@
         margin-right: 10%;
     }
 
-     .textColor{
-         color: white;
-     }
+    .textColor {
+        color: white;
+    }
 </style>
 <html>
 <head>
@@ -71,41 +71,23 @@
                     <th>Reg Date</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Spaghetti Bolognese</td>
-                    <td>Ground Beef</td>
-                    <td>30</td>
-                    <td>3</td>
-                    <td>Italian</td>
-                    <td>120</td>
-                    <td>2024-12-03</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Chicken Salad</td>
-                    <td>Chicken Breast</td>
-                    <td>20</td>
-                    <td>2</td>
-                    <td>Salad</td>
-                    <td>98</td>
-                    <td>2024-12-02</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Pancakes</td>
-                    <td>Flour</td>
-                    <td>15</td>
-                    <td>1</td>
-                    <td>Breakfast</td>
-                    <td>150</td>
-                    <td>2024-12-01</td>
-                </tr>
-                </tbody>
-
+                <c:forEach var="item" items="${list}">
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${item.recipe_name}</td>
+                        <td>${item.main_ingredient}</td>
+                        <td>${item.prep_time}</td>
+                        <td>${item.difficulty_level}</td>
+                        <td>${item.category}</td>
+                        <td>${item.cnt}</td>
+                        <td>${item.regdate}</td>
+                            <%--            <td>--%>
+                            <%--              <a href="edit/${item.seq}" class="btn btn-sm btn-warning">글수정</a>--%>
+                            <%--              <a href="javascript:delete_ok('${item.seq}')" class="btn btn-sm btn-danger">글삭제</a>--%>
+                            <%--            </td>--%>
+                    </tr>
+                </c:forEach>
             </table>
-
         </div>
     </div>
 </div>
