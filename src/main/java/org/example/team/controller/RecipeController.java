@@ -20,7 +20,7 @@ public class RecipeController {
 
     @RequestMapping(value = "/add")
     public String add(HttpSession session, Model model) {
-        UserVO loginuser = (UserVO) session.getAttribute("login");
+        UserVO loginuser = (UserVO) session.getAttribute("login"); // loginuser로 프린트 해서 확인가능 그리고 UserVO로 형변환 하는 이유는 session자체가 Object로 받기 때문
 
 
         return "add";
