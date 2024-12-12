@@ -3,3 +3,7 @@
 2024/12/06
 현재 layout 배치 완료
 back 부분 개발 시작할 필요있음
+
+2024/12/12
+session으로 login 정보입력 받는 것 확인완료
+RecipeController add부분 확인

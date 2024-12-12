@@ -1,11 +1,14 @@
 package org.example.team.controller;
 
 import org.example.team.service.RecipeWorldService;
+import org.example.team.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class RecipeController {
@@ -16,7 +19,10 @@ public class RecipeController {
     public String home() {return "index";}
 
     @RequestMapping(value = "/add")
-    public String add() {
+    public String add(HttpSession session, Model model) {
+        UserVO loginuser = (UserVO) session.getAttribute("login");
+
+
         return "add";
     }
 
