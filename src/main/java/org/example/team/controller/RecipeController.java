@@ -76,6 +76,17 @@ public class RecipeController {
         model.addAttribute("list", recipeWorldService.getWorldList());
         return "world";
     }
+
+    @RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
+    public String delete(@PathVariable("id") int id){
+        System.out.println("id?? >> "+ id);
+        int i = recipeWorldService.deleteRecipe(id);
+        if(i == 0)
+            System.out.println("데이터 삭제 실패..");
+        else
+            System.out.println("데이터 삭제 성공!!");
+        return "redirect:../mylist";
+    }
 //
 //    @RequestMapping(value = "/board/listSearch", method = RequestMethod.GET)
 //    public String listSearch(@RequestParam("title") String title, Model model) {
@@ -115,15 +126,6 @@ public class RecipeController {
 //        return "redirect:list";
 //    }
 //
-//    @RequestMapping(value = "/board/deleteok/{seq}", method = RequestMethod.GET)
-//    public String deletePost(@PathVariable("seq") int seq){
-//        int i = boardService.deleteBoard(seq);
-//        if(i == 0)
-//            System.out.println("데이터 삭제 실패..");
-//        else
-//            System.out.println("데이터 삭제 성공!!");
-//        return "redirect:../list";
-//    }
 //
 //    @RequestMapping(value = "/board/view/{seq}", method = RequestMethod.GET)
 //    public String viewPost(@PathVariable("seq") int seq, Model model) {

@@ -12,6 +12,10 @@
         SELECT * FROM worldlist
         WHERE id = #{id};
     </select>
+    <delete id="deleteRecipe" parameterType="int">
+        DELETE FROM worldlist
+        WHERE id = #{id};
+    </delete>
     <insert id="addRecipe" parameterType="worldlist">
         INSERT INTO worldlist (
         recipe_name,

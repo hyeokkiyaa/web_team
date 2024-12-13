@@ -39,10 +39,10 @@ public class RecipeWorldService {
     public WorldListVO getBoard(int id) {
         return myListDAO.getRecipe(id);
     }
-//
-//    public int deleteBoard(int seq) {
-//        return boardDAO.deleteBoard(seq);
-//    }
+
+    public int deleteRecipe(int id) {
+        return myListDAO.deleteRecipe(id);
+    }
 //
 //    public void increaseView(int seq) {
 //        boardDAO.increaseView(seq);
