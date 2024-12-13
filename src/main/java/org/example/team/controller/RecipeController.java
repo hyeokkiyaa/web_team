@@ -31,8 +31,11 @@ public class RecipeController {
         return "edit";
     }
 
-    @RequestMapping(value = "mylist")
-    public String mylist() {
+    @RequestMapping(value = "/mylist", method = RequestMethod.GET)
+    public String mlist(Model model, HttpSession session) {
+        UserVO loginuser = (UserVO) session.getAttribute("login");
+        String userid = loginuser.getUserid();
+        model.addAttribute("list", recipeWorldService.getMyList(userid));
         return "mylist";
     }
 
