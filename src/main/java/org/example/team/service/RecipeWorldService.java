@@ -3,10 +3,12 @@ package org.example.team.service;
 import org.example.team.dao.MyListDAO;
 import org.example.team.dao.WorldListDAO;
 import org.example.team.vo.MyListVO;
+import org.example.team.vo.UserVO;
 import org.example.team.vo.WorldListVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Service
@@ -25,6 +27,11 @@ public class RecipeWorldService {
         return myListDAO.getMyList(userid);
     }
 
+    public int insertRecipe(WorldListVO worldListVO, HttpSession session){
+        UserVO loginUser = (UserVO) session.getAttribute("login");
+        worldListVO.setUserid(loginUser.getUserid());
+        return myListDAO.addRecipe(worldListVO);
+    }
 //    public int insertBoard(BoardVO boardVO) {
 //        return boardDAO.insertBoard(boardVO);
 //    }

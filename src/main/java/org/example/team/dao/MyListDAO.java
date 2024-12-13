@@ -16,4 +16,8 @@ public class MyListDAO {
     public List<MyListVO> getMyList(String userid) {
         return sqlSession.selectList("Mylist.getRecipeList", userid);
     }
+
+    public int addRecipe(WorldListVO recipe) {
+        return sqlSession.insert("Mylist.addRecipe", recipe);
+    }
 }

@@ -8,4 +8,29 @@
         WHERE userid = #{userid}
         ORDER BY id DESC;
     </select>
+    <insert id="addRecipe" parameterType="worldlist">
+        INSERT INTO worldlist (
+        recipe_name,
+        main_ingredient,
+        ingredients,
+        cooking_order,
+        prep_time,
+        difficulty_level,
+        category,
+        userid,
+        cnt,
+        regdate
+        ) VALUES (
+        #{recipe_name},
+        #{main_ingredient},
+        #{ingredients},
+        #{cooking_order},
+        #{prep_time},
+        #{difficulty_level},
+        #{category},
+        #{userid},
+        #{cnt},
+        NOW()
+        );
+    </insert>
 </mapper>

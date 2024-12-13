@@ -2,6 +2,7 @@ package org.example.team.controller;
 
 import org.example.team.service.RecipeWorldService;
 import org.example.team.vo.UserVO;
+import org.example.team.vo.WorldListVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,9 +22,17 @@ public class RecipeController {
     @RequestMapping(value = "/add")
     public String add(HttpSession session, Model model) {
         UserVO loginuser = (UserVO) session.getAttribute("login"); // loginuser로 프린트 해서 확인가능 그리고 UserVO로 형변환 하는 이유는 session자체가 Object로 받기 때문
-
-
         return "add";
+    }
+
+    @RequestMapping(value = "/addok", method = RequestMethod.POST)
+    public String addok(HttpSession session, WorldListVO worldListVO) {
+        int i = recipeWorldService.insertRecipe(worldListVO, session);
+        if(i == 0)
+            System.out.println("데이터 추가 실패...");
+        else
+            System.out.println("데이터 추가 성공!!");
+        return "redirect:mylist";
     }
 
     @RequestMapping(value = "/edit")

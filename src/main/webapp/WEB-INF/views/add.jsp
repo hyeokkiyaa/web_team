@@ -6,16 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<style>
-    .textColor{
-        color: white;
-    }
-</style>
 <html>
 <head>
-    <title>Title</title>
+    <title>Add Recipe</title>
     <link rel="stylesheet" type="text/css" href="css/background.css">
-    <link rel="stylesheet" type="text/css" href="css/world.css">
+    <link rel="stylesheet" type="text/css" href="css/add_edit.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body style="opacity: 1;
     background-image: url('img/background.png');
@@ -26,6 +23,42 @@
     height: 100vh;
     background-color: black;
     color: black;">
-    <h1 class="textColor">ADD page</h1>
+<div class="form-container textColor">
+    <h1>ADD Your Recipe!</h1>
+    <form action="addok" method="post">
+        <div class="mb-3">
+            <label for="recipe_name" class="form-label">Recipe Name</label>
+            <input type="text" class="form-control" id="recipe_name" name="recipe_name" required>
+        </div>
+        <div class="mb-3">
+            <label for="main_ingredient" class="form-label">Main Ingredient</label>
+            <input type="text" class="form-control" id="main_ingredient" name="main_ingredient" required>
+        </div>
+        <div class="mb-3">
+            <label for="ingredients" class="form-label">Ingredients</label>
+            <textarea class="form-control" id="ingredients" name="ingredients" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="cooking_order" class="form-label">Cooking Order</label>
+            <textarea class="form-control" id="cooking_order" name="cooking_order" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="prep_time" class="form-label">Preparation Time (minutes)</label>
+            <input type="number" class="form-control" id="prep_time" name="prep_time" min="0" required>
+        </div>
+        <div class="mb-3">
+            <label for="difficulty_level" class="form-label">Difficulty Level (1-5)</label>
+            <input type="number" class="form-control" id="difficulty_level" name="difficulty_level" min="1" max="5" required>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <input type="text" class="form-control" id="category" name="category" required>
+        </div>
+        <div class="text-center">
+            <button type="button" class="btn btn-primary" onclick="history.back()">Back</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
 </body>
 </html>

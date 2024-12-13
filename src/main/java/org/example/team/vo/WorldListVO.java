@@ -11,7 +11,7 @@ public class WorldListVO {
     private int id;
     private String recipe_name;
     private String main_ingredient;
-    private String ingredient;
+    private String ingredients;
     private String cooking_order;
     private int prep_time;
     private int difficulty_level;
