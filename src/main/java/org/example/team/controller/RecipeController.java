@@ -6,6 +6,7 @@ import org.example.team.vo.WorldListVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -35,9 +36,21 @@ public class RecipeController {
         return "redirect:mylist";
     }
 
-    @RequestMapping(value = "/edit")
-    public String edit() {
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+    public String edit(@PathVariable int id, Model model) {
+        WorldListVO worldListVO = recipeWorldService.getBoard(id);
+        model.addAttribute("world", worldListVO);
         return "edit";
+    }
+
+    @RequestMapping(value = "/editok", method = RequestMethod.POST)
+    public String editok(WorldListVO worldListVO) {
+        int i = recipeWorldService.updateRecipe(worldListVO);
+        if(i == 0)
+            System.out.println("데이터 수정 실패...");
+        else
+            System.out.println("데이터 수정 성공!!");
+        return "redirect:mylist";
     }
 
     @RequestMapping(value = "/mylist", method = RequestMethod.GET)

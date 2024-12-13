@@ -2,7 +2,6 @@ package org.example.team.service;
 
 import org.example.team.dao.MyListDAO;
 import org.example.team.dao.WorldListDAO;
-import org.example.team.vo.MyListVO;
 import org.example.team.vo.UserVO;
 import org.example.team.vo.WorldListVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@ public class RecipeWorldService {
         return worldListDAO.getWorldList();
     }
 
-    public List<MyListVO> getMyList(String userid) {
+    public List<WorldListVO> getMyList(String userid) {
         return myListDAO.getMyList(userid);
     }
 
@@ -32,17 +31,14 @@ public class RecipeWorldService {
         worldListVO.setUserid(loginUser.getUserid());
         return myListDAO.addRecipe(worldListVO);
     }
-//    public int insertBoard(BoardVO boardVO) {
-//        return boardDAO.insertBoard(boardVO);
-//    }
-//
-//    public int updateBoard(BoardVO boardVO) {
-//        return boardDAO.updateBoard(boardVO);
-//    }
-//
-//    public BoardVO getBoard(int seq) {
-//        return boardDAO.getBoard(seq);
-//    }
+
+    public int updateRecipe(WorldListVO worldListVO){
+        return myListDAO.editRecipe(worldListVO);
+    }
+
+    public WorldListVO getBoard(int id) {
+        return myListDAO.getRecipe(id);
+    }
 //
 //    public int deleteBoard(int seq) {
 //        return boardDAO.deleteBoard(seq);

@@ -8,6 +8,10 @@
         WHERE userid = #{userid}
         ORDER BY id DESC;
     </select>
+    <select id="getRecipe" parameterType="int" resultType="worldlist">
+        SELECT * FROM worldlist
+        WHERE id = #{id};
+    </select>
     <insert id="addRecipe" parameterType="worldlist">
         INSERT INTO worldlist (
         recipe_name,
@@ -33,4 +37,17 @@
         NOW()
         );
     </insert>
+    <update id="editRecipe" parameterType="worldlist">
+        UPDATE worldlist
+        SET
+        recipe_name = #{recipe_name},
+        main_ingredient = #{main_ingredient},
+        ingredients = #{ingredients},
+        cooking_order = #{cooking_order},
+        prep_time = #{prep_time},
+        difficulty_level = #{difficulty_level},
+        category = #{category}
+        WHERE
+        id = #{id};
+    </update>
 </mapper>

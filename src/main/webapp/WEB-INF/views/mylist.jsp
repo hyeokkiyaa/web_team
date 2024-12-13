@@ -72,6 +72,7 @@
                     <th>Category</th>
                     <th>Views</th>
                     <th>Reg Date</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <c:forEach var="item" items="${list}">
@@ -84,10 +85,10 @@
                         <td>${item.category}</td>
                         <td>${item.cnt}</td>
                         <td>${item.regdate}</td>
-                            <%--            <td>--%>
-                            <%--              <a href="edit/${item.seq}" class="btn btn-sm btn-warning">글수정</a>--%>
-                            <%--              <a href="javascript:delete_ok('${item.seq}')" class="btn btn-sm btn-danger">글삭제</a>--%>
-                            <%--            </td>--%>
+                        <td>
+                            <a href="edit/${item.id}" class="btn btn-sm btn-warning">글수정</a>
+                            <a href="javascript:delete_ok('${item.id}')" class="btn btn-sm btn-danger">글삭제</a>
+                        </td>
                     </tr>
                 </c:forEach>
             </table>
