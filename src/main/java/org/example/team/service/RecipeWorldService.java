@@ -26,6 +26,10 @@ public class RecipeWorldService {
         return myListDAO.getMyList(userid);
     }
 
+    public List<WorldListVO> getMyListSearch(String recipe_name, String userid) {
+        return myListDAO.getSearchMyList(recipe_name,userid);
+    }
+
     public int insertRecipe(WorldListVO worldListVO, HttpSession session){
         UserVO loginUser = (UserVO) session.getAttribute("login");
         worldListVO.setUserid(loginUser.getUserid());
@@ -46,6 +50,8 @@ public class RecipeWorldService {
     public List<WorldListVO> getSearchRecipeList(String recipe_name){
         return worldListDAO.getSearchList(recipe_name);
     }
+
+
 //
 //    public void increaseView(int seq) {
 //        boardDAO.increaseView(seq);

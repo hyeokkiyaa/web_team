@@ -51,8 +51,10 @@
             <a class="btn btn-secondary" href="add">
                 <img src="img/plus-lg.svg" alt="plus sign"/>
             </a>
-            <input class="form-control me-2 ms-2" type="search" placeholder="Search" name="namesearch" id="namesearch">
-            <button class="btn btn-secondary" onclick="searchByName()">Search</button>
+            <form action="myListSearch" method="get" class="needs-validation d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" name="recipe_name" id="recipe_name" />
+                <button type="submit" class="btn btn-secondary">Search</button>
+            </form>
         </div>
         <br>
 

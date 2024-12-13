@@ -5,7 +5,9 @@ import org.example.team.vo.WorldListVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class MyListDAO {
@@ -31,4 +33,12 @@ public class MyListDAO {
     public int deleteRecipe(int id) {
         return sqlSession.delete("Mylist.deleteRecipe", id);
     }
+
+    public List<WorldListVO> getSearchMyList(String recipe_name, String userid) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("recipe_name", recipe_name);
+        params.put("userid", userid);
+        return sqlSession.selectList("Mylist.searchRecipeByName", params);
+    }
+
 }

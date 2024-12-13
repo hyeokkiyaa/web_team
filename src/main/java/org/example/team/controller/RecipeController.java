@@ -94,6 +94,13 @@ public class RecipeController {
         model.addAttribute("list", recipeWorldService.getSearchRecipeList(recipe_name));
         return "world";
     }
+
+    @RequestMapping(value = "/myListSearch", method = RequestMethod.GET)
+    public String myListSearch(@RequestParam("recipe_name") String recipe_name, HttpSession session, Model model) {
+        UserVO loginuser = (UserVO) session.getAttribute("login");
+        model.addAttribute("list", recipeWorldService.getMyListSearch(recipe_name,loginuser.getUserid()));
+        return "mylist";
+    }
 //
 //
 //    @RequestMapping(value = "/board/edit/{seq}", method = RequestMethod.GET)

@@ -8,6 +8,10 @@
         WHERE userid = #{userid}
         ORDER BY id DESC;
     </select>
+    <select id="searchRecipeByName" parameterType="string" resultType="worldlist">
+        select * from worldlist
+        where recipe_name like concat('%', #{recipe_name}, '%') and userid = #{userid}
+    </select>
     <select id="getRecipe" parameterType="int" resultType="worldlist">
         SELECT * FROM worldlist
         WHERE id = #{id};

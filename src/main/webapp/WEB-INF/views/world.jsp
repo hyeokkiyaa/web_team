@@ -82,10 +82,6 @@
             <td>${item.userid}</td>
             <td>${item.cnt}</td>
             <td>${item.regdate}</td>
-<%--            <td>--%>
-<%--              <a href="edit/${item.seq}" class="btn btn-sm btn-warning">글수정</a>--%>
-<%--              <a href="javascript:delete_ok('${item.seq}')" class="btn btn-sm btn-danger">글삭제</a>--%>
-<%--            </td>--%>
           </tr>
         </c:forEach>
       </table>
