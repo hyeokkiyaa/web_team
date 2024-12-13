@@ -6,4 +6,8 @@
     <select id="getRecipeList" resultType="worldlist">
         select * from worldlist order by id desc
     </select>
+    <select id="searchRecipeByName" parameterType="string" resultType="worldlist">
+        select * from worldlist
+        where recipe_name like concat('%', #{recipe_name}, '%')
+    </select>
 </mapper>

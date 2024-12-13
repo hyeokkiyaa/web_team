@@ -43,12 +43,12 @@ public class RecipeWorldService {
     public int deleteRecipe(int id) {
         return myListDAO.deleteRecipe(id);
     }
+    public List<WorldListVO> getSearchRecipeList(String recipe_name){
+        return worldListDAO.getSearchList(recipe_name);
+    }
 //
 //    public void increaseView(int seq) {
 //        boardDAO.increaseView(seq);
 //    }
 //
-//    public List<BoardVO> getBoardListSearch(String title){
-//        return boardDAO.getBoardListSearch(title);
-//    }
 }

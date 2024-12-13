@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 
@@ -87,27 +88,13 @@ public class RecipeController {
             System.out.println("데이터 삭제 성공!!");
         return "redirect:../mylist";
     }
+
+    @RequestMapping(value = "/listSearch", method = RequestMethod.GET)
+    public String listSearch(@RequestParam("recipe_name") String recipe_name, Model model) {
+        model.addAttribute("list", recipeWorldService.getSearchRecipeList(recipe_name));
+        return "world";
+    }
 //
-//    @RequestMapping(value = "/board/listSearch", method = RequestMethod.GET)
-//    public String listSearch(@RequestParam("title") String title, Model model) {
-//        model.addAttribute("list", boardService.getBoardListSearch(title));
-//        return "board/list";
-//    }
-//
-//    @RequestMapping(value = "/board/add", method = RequestMethod.GET)
-//    public String addPost(){
-//        return "board/add";
-//    }
-//
-//    @RequestMapping(value = "/board/addok", method = RequestMethod.POST)
-//    public String addPostOK(BoardVO vo){
-//        int i = boardService.insertBoard(vo);
-//        if (i == 0)
-//            System.out.println("데이터 추가 실패..");
-//        else
-//            System.out.println("데이터 추가 성공!!");
-//        return "redirect:list";
-//    }
 //
 //    @RequestMapping(value = "/board/edit/{seq}", method = RequestMethod.GET)
 //    public String editPost(@PathVariable("seq") int seq, Model model){
