@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 public class RecipeController {
@@ -64,19 +65,15 @@ public class RecipeController {
         return "mylist";
     }
 
-    @RequestMapping(value = "/world")
-    public String world() {
-        return "world";
-    }
-
     @RequestMapping(value = "/profile")
     public String profile() {
         return "profile";
     }
 
     @RequestMapping(value = "/world", method = RequestMethod.GET)
-    public String list(Model model) {
-        model.addAttribute("list", recipeWorldService.getWorldList());
+    public String list(@RequestParam(value = "sort", required = false) String sort, Model model) {
+        List<WorldListVO> sortRecipe = recipeWorldService.getSortedList(sort);
+        model.addAttribute("list", sortRecipe);
         return "world";
     }
 

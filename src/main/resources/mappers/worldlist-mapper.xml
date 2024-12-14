@@ -17,4 +17,20 @@
         WHERE
         id = #{id};
     </update>
+    <select id="getSortedList" resultType="worldlist">
+        SELECT *
+        FROM worldlist
+        <if test="sort != null">
+            ORDER BY
+            <choose>
+                <when test="sort == 'recipe_name'">recipe_name ASC</when>
+                <when test="sort == 'prep_time'">prep_time ASC</when>
+                <when test="sort == 'category'">category ASC</when>
+                <when test="sort == 'difficulty_level_easy'">difficulty_level ASC</when>
+                <when test="sort == 'difficulty_level_difficult'">difficulty_level DESC</when>
+                <when test="sort == 'cnt'"> cnt DESC</when>
+                <otherwise>id ASC</otherwise>
+            </choose>
+        </if>
+    </select>
 </mapper>

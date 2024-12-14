@@ -25,4 +25,7 @@
         }
 
 
+        public List<WorldListVO> getSortedList(String sort) {
+            return sqlSession.selectList("Worldlist.getSortedList", sort);
+        }
     }

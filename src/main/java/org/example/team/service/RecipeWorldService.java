@@ -55,6 +55,10 @@ public class RecipeWorldService {
         return worldListDAO.getSearchList(recipe_name);
     }
 
+    public List<WorldListVO> getSortedList(String sort) {
+        return worldListDAO.getSortedList(sort);
+    }
+
 
 //
 //    public void increaseView(int seq) {
