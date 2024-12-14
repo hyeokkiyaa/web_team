@@ -5,7 +5,9 @@
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.stereotype.Repository;
 
+    import java.util.HashMap;
     import java.util.List;
+    import java.util.Map;
 
     @Repository
     public class WorldListDAO {
@@ -25,7 +27,15 @@
         }
 
 
-        public List<WorldListVO> getSortedList(String sort) {
-            return sqlSession.selectList("Worldlist.getSortedList", sort);
+        public List<WorldListVO> getSortedAndPaginatedList(String sort, int offset, int pageSize) {
+            Map<String, Object> params = new HashMap<String, Object>();
+            params.put("sort", sort);
+            params.put("offset", offset);
+            params.put("pageSize", pageSize);
+            return sqlSession.selectList("Worldlist.getSortedAndPaginatedList", params);
+        }
+
+        public int getTotalRecipeCount() {
+            return sqlSession.selectOne("Worldlist.getTotalRecipeCount");
         }
     }

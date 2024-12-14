@@ -71,8 +71,20 @@ public class RecipeController {
     }
 
     @RequestMapping(value = "/world", method = RequestMethod.GET)
-    public String list(@RequestParam(value = "sort", required = false) String sort, Model model) {
-        List<WorldListVO> sortRecipe = recipeWorldService.getSortedList(sort);
+    public String list(@RequestParam(value = "sort", required = false) String sort,
+            @RequestParam(value = "page", defaultValue = "1") int page,
+            Model model) {
+
+        int pageSize = 5;
+        int offset = (page - 1) * pageSize;
+
+        List<WorldListVO> sortRecipe = recipeWorldService.getSortedAndPaginatedList(sort, offset, pageSize);
+
+        int totalRecipes = recipeWorldService.getTotalRecipeCount();
+        int totalPages = (int) Math.ceil((double) totalRecipes / pageSize);
+
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", totalPages);
         model.addAttribute("list", sortRecipe);
         return "world";
     }

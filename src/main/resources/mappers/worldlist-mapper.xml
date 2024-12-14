@@ -17,7 +17,7 @@
         WHERE
         id = #{id};
     </update>
-    <select id="getSortedList" resultType="worldlist">
+    <select id="getSortedAndPaginatedList" resultType="worldlist">
         SELECT *
         FROM worldlist
         <if test="sort != null">
@@ -28,9 +28,15 @@
                 <when test="sort == 'category'">category ASC</when>
                 <when test="sort == 'difficulty_level_easy'">difficulty_level ASC</when>
                 <when test="sort == 'difficulty_level_difficult'">difficulty_level DESC</when>
-                <when test="sort == 'cnt'"> cnt DESC</when>
+                <when test="sort == 'cnt'">cnt DESC</when>
                 <otherwise>id ASC</otherwise>
             </choose>
         </if>
+        LIMIT #{pageSize} OFFSET #{offset}
+    </select>
+
+    <select id="getTotalRecipeCount" resultType="int">
+        SELECT COUNT(*)
+        FROM worldlist
     </select>
 </mapper>

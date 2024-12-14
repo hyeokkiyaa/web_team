@@ -34,6 +34,13 @@
     tr:hover {
       background-color: #f0f0f0;
     }
+    .pagination-box {
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: 10%;
+        display: flex;
+        justify-content: flex-end;
+    }
 </style>
 <script>
     function view(id) {
@@ -130,5 +137,17 @@
         </div>
     </div>
 </div>
+
+<nav aria-label="Page navigation example" class="pagination-box">
+    <ul class="pagination">
+<c:forEach var="i" begin="1" end="${totalPages}">
+    <li class="page-item">
+    <a href="${pageContext.request.contextPath}/world?sort=${param.sort}&page=${i}"
+       class="<c:if test='${i == currentPage}'>active</c:if> page-link">${i}</a>
+    </li>
+</c:forEach>
+    </ul>
+</nav>
+
 </body>
 </html>

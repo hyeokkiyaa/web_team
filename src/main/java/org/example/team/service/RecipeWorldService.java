@@ -55,8 +55,13 @@ public class RecipeWorldService {
         return worldListDAO.getSearchList(recipe_name);
     }
 
-    public List<WorldListVO> getSortedList(String sort) {
-        return worldListDAO.getSortedList(sort);
+    public List<WorldListVO> getSortedAndPaginatedList(String sort, int offset, int pageSize) {
+        return worldListDAO.getSortedAndPaginatedList(sort, offset, pageSize);
+    }
+
+    // 총 레시피 개수를 가져오는 메소드
+    public int getTotalRecipeCount() {
+        return worldListDAO.getTotalRecipeCount();
     }
 
 
