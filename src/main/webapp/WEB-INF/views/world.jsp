@@ -25,11 +25,6 @@
       transition: background-color 0.3s ease;
     }
 
-    .select-sort {
-        height: 50px;
-        width: 100px;
-        margin-right: 10px;
-    }
 
     tr:hover {
       background-color: #f0f0f0;
@@ -40,6 +35,18 @@
         margin-right: 10%;
         display: flex;
         justify-content: flex-end;
+    }
+    .select-sort {
+        height: 40px;
+        width: 100px;
+        margin-right: 10px;
+    }
+
+    .addition-box {
+        height: 40px;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
     }
 </style>
 <script>
@@ -89,7 +96,7 @@
                 <option value="cnt">Most Views</option>
                 <option value="id">ID</option>
             </select>
-            <button class="btn btn-secondary custom-container" type="button" onclick="sortByName()">
+            <button class="btn btn-secondary addition-box" type="button" onclick="sortByName()">
                 <img src="img/sort-alpha-down.svg" alt="sort alphabet"/>
             </button>
 

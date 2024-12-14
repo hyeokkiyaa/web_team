@@ -32,12 +32,17 @@
     }
 
     .select-sort {
-        height: 50px;
+        height: 40px;
         width: 100px;
         margin-right: 10px;
     }
 
-
+    .addition-box {
+        height: 40px;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+    }
 </style>
 
 <script>
@@ -59,7 +64,7 @@
             console.error("No sort option selected.");
         }
     }
--
+
 </script>
 
 <html>
@@ -93,11 +98,11 @@
                 <option value="cnt">Most Views</option>
                 <option value="id">ID</option>
             </select>
-            <button class="btn btn-secondary custom-container" type="button" onclick="sortByName()">
+            <button class="btn btn-secondary custom-container addition-box" type="button" onclick="sortByName()">
                 <img src="img/sort-alpha-down.svg" alt="sort alphabet"/>
             </button>
 
-            <a class="btn btn-secondary" href="add">
+            <a class="btn btn-secondary addition-box" href="add">
                 <img src="img/plus-lg.svg" alt="plus sign"/>
             </a>
             <form action="myListSearch" method="get" class="needs-validation d-flex">
