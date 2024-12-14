@@ -7,3 +7,21 @@ back 부분 개발 시작할 필요있음
 2024/12/12
 session으로 login 정보입력 받는 것 확인완료
 RecipeController add부분 확인
+
+2024/12/14
+worldlist pagination added
+sort added
+add page modified 
+    - category made it as select mode
+    - text area added
+view page modified
+    - ingredients
+    - cooking order 
+    - /n applied 
+Reg date changed into yyyy/mm/dd format
+
+final work to be done
+    - profile logo addition
+    - edit page layout setting
+    - data add more than 10 needed (pagination can be modified after)
+    - file upload...?
