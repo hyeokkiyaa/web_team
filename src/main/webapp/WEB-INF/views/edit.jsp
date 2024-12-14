@@ -29,7 +29,16 @@
         }
     </style>
 </head>
-<body>
+<jsp:include page="header2.jsp"/>
+<body style="opacity: 1;
+    background-image: url('../img/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    height: 130vh;
+    background-color: black;
+    color: black;">
 <h1>Edit Your Recipe</h1>
 <div class="form-container">
     <form:form modelAttribute="world" action="../editok" method="post">
