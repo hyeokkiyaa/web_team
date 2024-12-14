@@ -10,4 +10,11 @@
         select * from worldlist
         where recipe_name like concat('%', #{recipe_name}, '%')
     </select>
+    <update id="incrementViewCount" parameterType="int">
+        UPDATE worldlist
+        SET
+        cnt = cnt + 1
+        WHERE
+        id = #{id};
+    </update>
 </mapper>

@@ -30,6 +30,8 @@ public class MyListDAO {
         return sqlSession.update("Mylist.editRecipe", recipe);
     }
 
+
+
     public int deleteRecipe(int id) {
         return sqlSession.delete("Mylist.deleteRecipe", id);
     }

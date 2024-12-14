@@ -21,6 +21,15 @@
      .textColor{
          color: white;
      }
+    tr {
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    tr:hover {
+        background-color: #f0f0f0;
+    }
+
 </style>
 
 <script>

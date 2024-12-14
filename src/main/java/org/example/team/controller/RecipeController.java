@@ -41,7 +41,7 @@ public class RecipeController {
 
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
     public String edit(@PathVariable int id, Model model) {
-        WorldListVO worldListVO = recipeWorldService.getBoard(id);
+        WorldListVO worldListVO = recipeWorldService.getRecipe(id);
         model.addAttribute("world", worldListVO);
         return "edit";
     }
@@ -107,8 +107,8 @@ public class RecipeController {
 
     @RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
     public String view(@PathVariable int id, Model model) {
-        WorldListVO worldListVO = recipeWorldService.getBoard(id);
-
+        WorldListVO worldListVO = recipeWorldService.getRecipe(id);
+        recipeWorldService.incrementViewCount(id);
         model.addAttribute("world", worldListVO);
         SimpleDateFormat cformat = new SimpleDateFormat("yyyy/MM/dd");
         String changeDate = cformat.format(worldListVO.getRegdate());

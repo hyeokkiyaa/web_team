@@ -41,14 +41,16 @@
     background-color: black;
     color: black;">
 <c:if test="${not empty world}">
+
 <h2 class="textColor">${world.recipe_name}</h2>
 <main class="view-box custom-container">
-    <p><strong>Main Ingredient:</strong> ${world.main_ingredient}</p>
+    <p><strong>Written By:</strong> ${world.userid}, (${date})</p>
     <p><strong>Prep Time (min):</strong> ${world.prep_time}</p>
     <p><strong>Difficulty Level:</strong> ${world.difficulty_level}</p>
     <p><strong>Category:</strong> ${world.category}</p>
+    <p><strong>Ingredients:</strong></p> <p>${world.ingredients}</p>
+    <p><strong>Cooking Order</strong></p> <p>${world.cooking_order}</p>
     <p><strong>Views:</strong> ${world.cnt}</p>
-    <p><strong>Reg Date:</strong> ${date}</p>
 </main>
 </c:if>
 

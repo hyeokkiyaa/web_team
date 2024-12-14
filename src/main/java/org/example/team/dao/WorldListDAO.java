@@ -19,4 +19,10 @@
         public List<WorldListVO> getSearchList(String recipe_name){
             return sqlSession.selectList("Worldlist.searchRecipeByName",recipe_name);
         }
+
+        public void incrementViewCount(int id) {
+            sqlSession.update("Worldlist.incrementViewCount", id);
+        }
+
+
     }

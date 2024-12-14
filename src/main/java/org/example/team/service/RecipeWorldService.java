@@ -40,7 +40,11 @@ public class RecipeWorldService {
         return myListDAO.editRecipe(worldListVO);
     }
 
-    public WorldListVO getBoard(int id) {
+    public void incrementViewCount(int id) {
+        worldListDAO.incrementViewCount(id);
+    }
+
+    public WorldListVO getRecipe(int id) {
         return myListDAO.getRecipe(id);
     }
 
