@@ -5,6 +5,7 @@
   Time: 오후 7:34
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <link rel="stylesheet" type="text/css" href="css/background.css">
 <link rel="stylesheet" type="text/css" href="css/world.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -97,8 +98,8 @@
 </nav>
 <div class="container">
     <div class="row">
-        <div class="col-xs-12">
-            <table>
+        <div class="col-xs-12 table-responsive">
+            <table class="table table-striped table-hover">
                 <thead>
                 <tr>
                     <th>ID</th>
@@ -122,7 +123,7 @@
                         <td>${item.category}</td>
                         <td>${item.userid}</td>
                         <td>${item.cnt}</td>
-                        <td>${item.regdate}</td>
+                        <td><fmt:formatDate value="${item.regdate}" pattern="yyyy-MM-dd" /></td>
                     </tr>
                 </c:forEach>
             </table>
