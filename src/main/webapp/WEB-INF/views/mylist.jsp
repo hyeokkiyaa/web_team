@@ -22,6 +22,18 @@
          color: white;
      }
 </style>
+
+<script>
+    function view(id) {
+        location.href = "view/" + id;
+    }
+
+    function delete_ok(id) {
+        var a = confirm("정말로 삭제하겠습니까?");
+        if (a) location.href = 'deleteok/' + id;
+    }
+</script>
+
 <html>
 <head>
     <title>My List</title>
@@ -78,7 +90,7 @@
                 </tr>
                 </thead>
                 <c:forEach var="item" items="${list}">
-                    <tr>
+                    <tr onclick="view('${item.id}')">
                         <td>${item.id}</td>
                         <td>${item.recipe_name}</td>
                         <td>${item.main_ingredient}</td>

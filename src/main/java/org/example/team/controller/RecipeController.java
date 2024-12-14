@@ -101,6 +101,18 @@ public class RecipeController {
         model.addAttribute("list", recipeWorldService.getMyListSearch(recipe_name,loginuser.getUserid()));
         return "mylist";
     }
+
+
+    @RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
+    public String view(@PathVariable int id, Model model) {
+        WorldListVO worldListVO = recipeWorldService.getBoard(id);
+        System.out.println(worldListVO.getId());
+        model.addAttribute("world", worldListVO);
+        return "view";
+    }
+
+
+
 //
 //
 //    @RequestMapping(value = "/board/edit/{seq}", method = RequestMethod.GET)

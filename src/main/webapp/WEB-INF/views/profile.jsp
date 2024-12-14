@@ -20,6 +20,7 @@
     <title>Profile</title>
 </head>
 <jsp:include page="header.jsp" />
+
 <body style="opacity: 1;
     background-image: url('img/background.png');
     background-size: cover;
