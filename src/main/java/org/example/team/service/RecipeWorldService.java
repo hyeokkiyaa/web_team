@@ -60,9 +60,7 @@ public class RecipeWorldService {
     }
 
 
-//
-//    public void increaseView(int seq) {
-//        boardDAO.increaseView(seq);
-//    }
-//
+    public List<WorldListVO> getMyListSort(String userid, String sort) {
+        return myListDAO.getMyListSort(userid, sort);
+    }
 }

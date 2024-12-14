@@ -14,6 +14,16 @@ public class MyListDAO {
     @Autowired
     SqlSession sqlSession;
 
+    public List<WorldListVO> getMyListSort(String userid, String sort) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("userid", userid);
+        params.put("sort", sort);
+
+        return sqlSession.selectList("Mylist.getMyListSort", params);
+    }
+
+
+
     public WorldListVO getRecipe(int id) {
         return sqlSession.selectOne("getRecipe", id);
     }

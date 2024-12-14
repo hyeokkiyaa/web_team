@@ -58,10 +58,10 @@ public class RecipeController {
     }
 
     @RequestMapping(value = "/mylist", method = RequestMethod.GET)
-    public String mlist(Model model, HttpSession session) {
+    public String mlist(@RequestParam(value = "sort", required = false) String sort,Model model, HttpSession session) {
         UserVO loginuser = (UserVO) session.getAttribute("login");
         String userid = loginuser.getUserid();
-        model.addAttribute("list", recipeWorldService.getMyList(userid));
+        model.addAttribute("list", recipeWorldService.getMyListSort(userid, sort));
         return "mylist";
     }
 

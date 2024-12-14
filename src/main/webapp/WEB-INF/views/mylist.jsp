@@ -30,6 +30,12 @@
         background-color: #f0f0f0;
     }
 
+    .select-sort {
+        height: 50px;
+        width: 100px;
+        margin-right: 10px;
+    }
+
 </style>
 
 <script>
@@ -40,6 +46,16 @@
     function delete_ok(id) {
         var a = confirm("정말로 삭제하겠습니까?");
         if (a) location.href = 'deleteok/' + id;
+    }
+
+    function sortByName() {
+        let sortby = document.getElementById("sortby").value;
+
+        if (sortby) {
+            location.href = "mylist?sort=" + sortby;
+        } else {
+            console.error("No sort option selected.");
+        }
     }
 </script>
 
@@ -65,6 +81,15 @@
 
         <div class="d-flex custom-container">
             <input type="hidden" name="sort" value="">
+            <select class="form-select select-sort text-dark" id="sortby" name="sortby">
+                <option value="recipe_name">Recipe Name</option>
+                <option value="prep_time">Time</option>
+                <option value="category">Category</option>
+                <option value="difficulty_level_easy">Difficulty(Easy)</option>
+                <option value="difficulty_level_difficult">Difficulty(Difficult)</option>
+                <option value="cnt">Most Views</option>
+                <option value="id">ID</option>
+            </select>
             <button class="btn btn-secondary custom-container" type="button" onclick="sortByName()">
                 <img src="img/sort-alpha-down.svg" alt="sort alphabet"/>
             </button>
