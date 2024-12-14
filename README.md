@@ -19,6 +19,7 @@ view page modified
     - cooking order 
     - /n applied 
 Reg date changed into yyyy/mm/dd format
+Responsive table made.. @mobile can be used
 
 final work to be done
     - profile logo addition
