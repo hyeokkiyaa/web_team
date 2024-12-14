@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Controller
 public class RecipeController {
@@ -106,8 +108,11 @@ public class RecipeController {
     @RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
     public String view(@PathVariable int id, Model model) {
         WorldListVO worldListVO = recipeWorldService.getBoard(id);
-        System.out.println(worldListVO.getId());
+
         model.addAttribute("world", worldListVO);
+        SimpleDateFormat cformat = new SimpleDateFormat("yyyy/MM/dd");
+        String changeDate = cformat.format(worldListVO.getRegdate());
+        model.addAttribute("date", changeDate);
         return "view";
     }
 

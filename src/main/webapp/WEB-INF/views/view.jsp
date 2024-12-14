@@ -12,14 +12,18 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <style>
-    .custom-container {
-        width: fit-content;
-        margin-left: auto;
-        margin-right: 10%;
-    }
-
     .textColor{
         color: white;
+    }
+
+    .view-box {
+        width: 70%;
+        padding: 15px;
+        background-color: white;
+        opacity: 0.95;
+        border-radius: 10px;
+        margin: 0 auto;
+        position: relative;
     }
 </style>
 <html>
@@ -36,7 +40,20 @@
     height: 100vh;
     background-color: black;
     color: black;">
-<h2 class="textColor">Recipe</h2>
+<c:if test="${not empty world}">
+<h2 class="textColor">${world.recipe_name}</h2>
+<main class="view-box custom-container">
+    <p><strong>Main Ingredient:</strong> ${world.main_ingredient}</p>
+    <p><strong>Prep Time (min):</strong> ${world.prep_time}</p>
+    <p><strong>Difficulty Level:</strong> ${world.difficulty_level}</p>
+    <p><strong>Category:</strong> ${world.category}</p>
+    <p><strong>Views:</strong> ${world.cnt}</p>
+    <p><strong>Reg Date:</strong> ${date}</p>
+</main>
+</c:if>
 
+<c:if test="${empty world}">
+    <p>해당 레시피를 찾을 수 없습니다.</p>
+</c:if>
 </body>
 </html>
