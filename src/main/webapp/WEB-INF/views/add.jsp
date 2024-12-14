@@ -80,6 +80,7 @@
                 <option value="Vegan">Vegan</option>
                 <option value="Appetizer">Appetizer</option>
                 <option value="Beverage">Beverage</option>
+                <option value="Etc">Etc</option>
             </select>
         </div>
 
