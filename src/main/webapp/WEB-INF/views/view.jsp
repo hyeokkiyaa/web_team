@@ -26,6 +26,11 @@
         position: relative;
     }
 </style>
+<script>
+    function goback(){
+        location.href = "../world";
+    }
+</script>
 <html>
 <head>
     <title>View Recipe</title>
@@ -51,11 +56,14 @@
     <p><strong>Ingredients:</strong></p> <p>${world.ingredients}</p>
     <p><strong>Cooking Order</strong></p> <p>${world.cooking_order}</p>
     <p><strong>Views:</strong> ${world.cnt}</p>
+    <button type="button" class="btn btn-secondary" onclick="goback()">Back</button>
+
 </main>
 </c:if>
 
 <c:if test="${empty world}">
     <p>해당 레시피를 찾을 수 없습니다.</p>
+    <button type="button" class="btn btn-secondary" onclick="goback()">Back</button>
 </c:if>
 </body>
 </html>
