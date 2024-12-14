@@ -42,7 +42,7 @@
     background-repeat: no-repeat;
     background-position: center;
     margin: 0;
-    height: 100vh;
+    height: 130vh;
     background-color: black;
     color: black;">
 <c:if test="${not empty world}">
@@ -53,8 +53,8 @@
     <p><strong>Prep Time (min):</strong> ${world.prep_time}</p>
     <p><strong>Difficulty Level:</strong> ${world.difficulty_level}</p>
     <p><strong>Category:</strong> ${world.category}</p>
-    <p><strong>Ingredients:</strong></p> <p>${world.ingredients}</p>
-    <p><strong>Cooking Order</strong></p> <p>${world.cooking_order}</p>
+    <p><strong>Ingredients:</strong></p> <pre><p>${world.ingredients}</p></pre>
+    <p><strong>Cooking Order</strong></p> <pre><p>${world.cooking_order}</p></pre>
     <p><strong>Views:</strong> ${world.cnt}</p>
     <button type="button" class="btn btn-secondary" onclick="goback()">Back</button>
 
