@@ -22,7 +22,6 @@ Reg date changed into yyyy/mm/dd format
 Responsive table made.. @mobile can be used
 
 final work to be done
-    - profile logo addition
     - edit page layout setting
     - data add more than 10 needed (pagination can be modified after)
     - file upload...?

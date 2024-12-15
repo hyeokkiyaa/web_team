@@ -26,11 +26,7 @@
         position: relative;
     }
 </style>
-<script>
-    function goback(){
-        location.href = "../world";
-    }
-</script>
+
 <html>
 <head>
     <title>View Recipe</title>
@@ -56,7 +52,7 @@
     <p><strong>Ingredients:</strong></p> <pre><p>${world.ingredients}</p></pre>
     <p><strong>Cooking Order</strong></p> <pre><p>${world.cooking_order}</p></pre>
     <p><strong>Views:</strong> ${world.cnt}</p>
-    <button type="button" class="btn btn-secondary" onclick="goback()">Back</button>
+    <button type="button" class="btn btn-secondary" onclick="history.back()">Back</button>
 
 </main>
 </c:if>

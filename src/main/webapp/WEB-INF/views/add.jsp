@@ -26,6 +26,13 @@
     .textColor {
         color: black;
     }
+    h2 {
+        text-align: center;
+        padding: 20px 0;
+        font-weight: bold;
+        font-family: "Bauhaus 93";
+        color: black;
+    }
 </style>
 <jsp:include page="header.jsp"/>
 <body style="opacity: 1;
@@ -38,7 +45,7 @@
     background-color: black;
     color: black;">
 <div class="form-container textColor form-signin">
-    <h1>ADD Your Recipe!</h1>
+    <h2>ADD Your Recipe!</h2>
     <form action="addok" method="post">
         <div class="mb-3">
             <label for="recipe_name" class="form-label">Recipe Name</label>
